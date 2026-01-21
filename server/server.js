@@ -4,15 +4,12 @@ const path = require("path");
 const connectDB = require("./config/db.js");
 const imageRoutes = require("./routes/imageRoutes.js");
 const dotenv = require("dotenv");
-const app = require("./app");
+const app = express();
 
 dotenv.config();
 
 // Connect to database
 connectDB();
-
-const app = express();
-
 // Middleware
 app.use(cors());
 app.use(express.json());
