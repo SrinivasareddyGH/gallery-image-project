@@ -1,0 +1,31 @@
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
+const connectDB = require("./config/db.js");
+const imageRoutes = require("./routes/imageRoutes.js");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+// Connect to database
+connectDB();
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Static folder
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// Routes
+app.use("/api/images", imageRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+
+module.exports = app;
