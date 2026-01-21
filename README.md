@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MERN Image Gallery
 
 A clean, production-ready Image Gallery application built with the MERN stack (MongoDB, Express, React, Node.js).
@@ -57,3 +58,6 @@ Upload images using the UI form. Add comma-separated tags like "nature, travel, 
 ## Screenshots
 
 _(Placeholder for screenshots)_
+=======
+# gallery-image-project
+>>>>>>> c9a4af76545793b2241d2d11f0ef3952043307cb
